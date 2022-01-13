@@ -17,6 +17,10 @@ module.exports = config => {
     );
   });
 
+  // Returns a collection of blog posts in reverse date order
+  config.addCollection('blog', collection => {
+    return [...collection.getFilteredByGlob('./src/posts/*.md')].reverse();
+  });
 
   // Return your Object options
   return {
